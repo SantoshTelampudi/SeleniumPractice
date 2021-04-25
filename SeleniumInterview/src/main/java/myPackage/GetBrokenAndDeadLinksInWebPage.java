@@ -20,6 +20,7 @@ public class GetBrokenAndDeadLinksInWebPage {
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("disable-infobars");
+		options.addArguments("--disable-notifications");
 		options.setHeadless(true);
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver(options);
