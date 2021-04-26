@@ -1,5 +1,8 @@
 package myPackage;
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +21,8 @@ public class FramesInnerFramesMultiFrames {
 		options.addArguments("--disable-notifications");
 	//	options.setHeadless(true);
 		WebDriverManager.chromedriver().setup();
-	/*	WebDriver driver = new ChromeDriver(options);
+		
+		WebDriver driver = new ChromeDriver(options);
 		
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -42,13 +46,13 @@ public class FramesInnerFramesMultiFrames {
 		driver.findElement(By.xpath("//div[@class='topNav']//a[normalize-space()='Deprecated']")).click();
 		driver.switchTo().defaultContent();
 		
-		driver.quit(); */
+		driver.quit(); 
 		
 		WebDriver driver1 = new ChromeDriver(options);
 		
 		driver1.manage().deleteAllCookies();
 		driver1.manage().window().maximize();
-
+		driver1.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		driver1.get("http://demo.automationtesting.in/Frames.html");
 
@@ -64,12 +68,6 @@ public class FramesInnerFramesMultiFrames {
 		Thread.sleep(2000);
 		
 		driver1.quit();
-		
-		
-		
-		
-		
-		
 		
 		
 
